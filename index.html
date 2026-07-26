@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wo sich Bio wirklich lohnt | Dr. Lara Vadlau</title>
+<meta name="description" content="Der Bio-Einkaufsguide von Dr. Lara Vadlau: nach Pestizidbelastung sortiert. Wo Bio sich auszahlt, wo konventionell reicht, und wo das Siegel nur Marketing ist.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#d4af37;--gold-soft:#e6c86b;--dark:#141b28;--darker:#0d131e;
+  --panel:#1b2434;--panel-2:#212c40;--line:rgba(212,175,55,.18);
+  --text:#e8ecf3;--muted:#9aa6bb;--muted-2:#6f7c93;
+  --green:#5fbf8f;--amber:#e0a94a;--red:#d97a72;--maxw:1120px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--darker);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.serif{font-family:'Fraunces',Georgia,serif;font-weight:500}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.eyebrow{font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:18px}
+a{color:var(--gold-soft);text-decoration:none}
+a:hover{text-decoration:underline}
+
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--gold),var(--gold-soft));z-index:2000;transition:width .1s}
+
+header{position:sticky;top:0;z-index:1000;background:rgba(13,19,30,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+header .container{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:'Fraunces',serif;font-size:19px;font-weight:600;letter-spacing:-.01em;color:#fff}
+.brand span{color:var(--gold)}
+nav.links{display:flex;gap:26px}
+nav.links a{color:var(--muted);font-size:13.5px;font-weight:500}
+nav.links a:hover{color:var(--gold);text-decoration:none}
+@media(max-width:860px){nav.links{display:none}}
+
+.hero{position:relative;padding:88px 0 70px;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-30%;right:-15%;width:680px;height:680px;background:radial-gradient(circle,rgba(212,175,55,.12) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-40%;left:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(95,191,143,.06) 0%,transparent 70%);pointer-events:none}
+.hero .container{position:relative;z-index:2}
+.hero h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(34px,5.4vw,58px);line-height:1.08;letter-spacing:-.02em;color:#fff;max-width:17ch}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero .lede{margin-top:26px;font-size:clamp(16px,2.1vw,20px);color:var(--muted);max-width:60ch;line-height:1.6}
+.hero .meta{margin-top:34px;display:flex;flex-wrap:wrap;gap:12px}
+.pill{border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:13px;color:var(--text);background:rgba(212,175,55,.05)}
+.pill b{color:var(--gold)}
+.byline{margin-top:38px;display:flex;align-items:center;gap:14px;color:var(--muted);font-size:14px}
+.byline .avatar{width:44px;height:44px;border-radius:50%;overflow:hidden;flex:none}
+.byline .avatar img{width:100%;height:100%;object-fit:cover}
+.byline b{color:var(--text)}
+
+section{padding:70px 0;border-top:1px solid rgba(255,255,255,.04)}
+.sec-head{max-width:64ch;margin-bottom:36px}
+.sec-head h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(26px,3.6vw,38px);line-height:1.15;letter-spacing:-.01em;color:#fff}
+.sec-head p{margin-top:16px;color:var(--muted);font-size:17px}
+
+.model{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:860px){.model{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.model{grid-template-columns:1fr}}
+.model .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px}
+.model .card .k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.model .card h3{font-family:'Fraunces',serif;font-size:20px;margin:10px 0 8px;color:#fff;font-weight:500}
+.model .card p{color:var(--muted);font-size:14.5px}
+
+.principle{margin-top:28px;background:var(--darker);border-left:3px solid var(--gold);border-radius:0 12px 12px 0;padding:20px 24px;color:var(--text);font-size:16px}
+.principle .l{display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:6px}
+
+/* tier legend */
+.legend{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:26px}
+.grade{display:inline-flex;align-items:center;gap:9px;font-size:14px;color:var(--muted)}
+.dot{width:11px;height:11px;border-radius:50%;flex:none}
+.dot.r{background:var(--red)} .dot.g{background:var(--green)} .dot.m{background:var(--muted-2)}
+
+.tier-title{font-family:'Fraunces',serif;font-size:20px;font-weight:500;margin:34px 0 16px}
+.tier-title.buy{color:var(--red)}
+.tier-title.ok{color:var(--green)}
+.tier-title.skip{color:var(--muted)}
+
+.item{background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:24px 26px;margin-bottom:14px;display:grid;grid-template-columns:52px 1fr auto;gap:20px;align-items:center}
+.item.buy{border-left:3px solid var(--red)}
+.item.ok{border-left:3px solid var(--green)}
+.item.skip{border-left:3px solid var(--muted-2)}
+.item .num{font-family:'Fraunces',serif;font-size:34px;font-weight:600;color:rgba(212,175,55,.5);line-height:1}
+.item .body h3{font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:#fff;font-weight:700;margin-bottom:7px}
+.item .body p{color:var(--muted);font-size:15px}
+.item .rec{text-align:right;white-space:nowrap}
+.item .rec .big{font-family:'Fraunces',serif;font-size:19px;font-weight:600;line-height:1.15}
+.item.buy .rec .big{color:var(--red)}
+.item.ok .rec .big{color:var(--green)}
+.item.skip .rec .big{color:var(--muted)}
+.item .rec .small{font-size:12.5px;color:var(--muted-2);margin-top:2px}
+@media(max-width:700px){
+  .item{grid-template-columns:40px 1fr;gap:14px}
+  .item .rec{grid-column:2;text-align:left;margin-top:6px}
+  .item .rec .big{font-size:17px}
+}
+
+.callout{background:linear-gradient(135deg,rgba(212,175,55,.08),transparent);border:1px solid var(--line);border-radius:16px;padding:28px 30px;margin-top:8px}
+.callout .l{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:10px}
+.callout p{color:var(--text);font-size:16.5px}
+.callout p+p{margin-top:12px}
+
+.steps{counter-reset:s;display:grid;gap:14px}
+.step{display:flex;gap:20px;background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:22px 24px}
+.step .n{counter-increment:s;font-family:'Fraunces',serif;font-size:26px;color:var(--gold);font-weight:600;flex:none;width:40px}
+.step .n::before{content:counter(s,decimal-leading-zero)}
+.step h4{font-size:17px;color:#fff;margin-bottom:5px;font-weight:600}
+.step p{color:var(--muted);font-size:15px}
+
+.cta{background:linear-gradient(135deg,var(--panel),var(--darker));border:1px solid var(--line);border-radius:22px;padding:52px 44px;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-40%;left:50%;transform:translateX(-50%);width:520px;height:420px;background:radial-gradient(circle,rgba(212,175,55,.14),transparent 70%);pointer-events:none}
+.cta-photo{position:relative;width:132px;height:132px;border-radius:50%;object-fit:cover;object-position:50% 22%;border:3px solid var(--gold);box-shadow:0 12px 34px rgba(0,0,0,.45);margin:0 auto 22px;display:block}
+.cta h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(26px,4vw,40px);color:#fff;position:relative;line-height:1.14}
+.cta p{color:var(--muted);max-width:54ch;margin:18px auto 0;position:relative;font-size:17px}
+.btn{display:inline-block;margin-top:30px;background:linear-gradient(135deg,var(--gold),var(--gold-soft));color:#1a1206;font-weight:600;font-size:15.5px;padding:15px 34px;border-radius:999px;position:relative;transition:transform .2s,box-shadow .2s;box-shadow:0 10px 30px rgba(212,175,55,.22)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(212,175,55,.32);text-decoration:none}
+.cta .socials{margin-top:26px;display:flex;gap:24px;justify-content:center;position:relative}
+.cta .socials a{color:var(--muted);font-size:13.5px;cursor:pointer}
+
+.disclaimer{background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:22px 26px;color:var(--muted-2);font-size:13.5px;line-height:1.6}
+.disclaimer b{color:var(--muted)}
+footer{padding:44px 0;border-top:1px solid var(--line);color:var(--muted-2);font-size:13px}
+footer .container{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:center}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* newsletter modal */
+.nl-overlay{position:fixed;inset:0;background:rgba(6,10,16,.72);backdrop-filter:blur(4px);z-index:3000;display:none;align-items:center;justify-content:center;padding:20px}
+.nl-overlay.open{display:flex}
+.nl-modal{background:var(--panel);border:1px solid var(--line);border-radius:20px;max-width:440px;width:100%;padding:34px 32px;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.nl-modal h3{font-family:'Fraunces',serif;font-weight:500;font-size:24px;color:#fff;margin-bottom:8px}
+.nl-modal p.intro{color:var(--muted);font-size:14.5px;margin-bottom:22px}
+.nl-close{position:absolute;top:14px;right:16px;background:none;border:none;color:var(--muted);font-size:26px;cursor:pointer;line-height:1;padding:4px}
+.nl-close:hover{color:var(--gold)}
+.nl-field{margin-bottom:14px}
+.nl-field label{display:block;font-size:12.5px;color:var(--gold);font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:6px}
+.nl-field input{width:100%;background:var(--darker);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:12px 14px;color:var(--text);font-size:15px;font-family:inherit}
+.nl-field input:focus{outline:none;border-color:var(--gold)}
+.nl-field .opt{color:var(--muted-2);text-transform:none;letter-spacing:0;font-weight:400}
+.nl-submit{width:100%;margin-top:8px;background:linear-gradient(135deg,var(--gold),var(--gold-soft));color:#1a1206;font-weight:600;font-size:15px;padding:14px;border:none;border-radius:999px;cursor:pointer;transition:transform .2s}
+.nl-submit:hover{transform:translateY(-1px)}
+.nl-submit[disabled]{opacity:.6;cursor:default}
+.nl-note{margin-top:14px;font-size:11.5px;color:var(--muted-2);line-height:1.5}
+.nl-success{text-align:center;padding:16px 0}
+.nl-success .ok{font-size:44px;color:var(--green);line-height:1;margin-bottom:12px}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<header>
+  <div class="container">
+    <div class="brand">Dr. Lara <span>Vadlau</span></div>
+    <nav class="links">
+      <a href="#modell">Denkmodell</a>
+      <a href="#liste">Die Liste</a>
+      <a href="#praxis">Beim Einkauf</a>
+      <a href="#start">Start</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" style="border-top:none">
+  <div class="container">
+    <div class="eyebrow reveal">Bio-Einkaufsguide · Teil 01 · Vertiefung zum Reel</div>
+    <h1 class="reveal">Wo sich <em>Bio</em> wirklich lohnt.</h1>
+    <p class="lede reveal">Die Liste ist nach Pestizidbelastung geordnet. Oben stehen die Lebensmittel, bei denen sich Bio wirklich auszahlt, weil dort die meisten Rückstände sitzen. Unten die, bei denen du entspannt zur günstigeren konventionellen Variante greifen kannst.</p>
+    <div class="meta reveal">
+      <span class="pill"><b>9 Kategorien</b> priorisiert</span>
+      <span class="pill">Für deinen nächsten Einkauf</span>
+    </div>
+    <div class="byline reveal">
+      <div class="avatar"><img src="lara-avatar.jpg" alt="Dr. Lara Vadlau"></div>
+      <div>Von <b>Dr. Lara Vadlau</b> · Longevity Medicine</div>
+    </div>
+  </div>
+</section>
+
+<!-- MENTAL MODEL -->
+<section id="modell">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Das Denkmodell</div>
+      <h2>Priorisieren, nicht Angst machen.</h2>
+      <p>Ob Bio sich lohnt, hängt an vier Fragen. Wo mehrere davon zusammenkommen, sitzen die meisten Rückstände. Dort steckst du dein Geld sinnvoll hinein.</p>
+    </div>
+    <div class="model">
+      <div class="card reveal"><div class="k">Frage 1</div><h3>Schale</h3><p>Dünn oder dick? Was du mitisst, isst du komplett mit. Was du wegschälst, nimmt Rückstände größtenteils mit.</p></div>
+      <div class="card reveal"><div class="k">Frage 2</div><h3>Roh oder gekocht</h3><p>Roh gegessene Lebensmittel gehen ungefiltert in dich. Kochen und Schälen reduzieren zusätzlich.</p></div>
+      <div class="card reveal"><div class="k">Frage 3</div><h3>Oberfläche</h3><p>Blattgemüse hat viel Fläche pro Gramm, deshalb bleibt dort mehr hängen als bei kompakten Sorten.</p></div>
+      <div class="card reveal"><div class="k">Frage 4</div><h3>Tierhaltung</h3><p>Bei Tierprodukten geht es um mehr als Rückstände: In der Bio-Haltung sind Antibiotika als Routine verboten.</p></div>
+    </div>
+    <div class="principle reveal">
+      <span class="l">Wichtig</span>
+      Diese Liste hilft dir beim <b>Priorisieren</b>, nicht beim Angstmachen. Die Rückstände auf konventioneller Ware liegen meist innerhalb der gesetzlichen Grenzwerte, und der größte Effekt für deine Gesundheit kommt davon, überhaupt viel Obst und Gemüse zu essen. Wasch trotzdem alles gründlich, auch Bio.
+    </div>
+  </div>
+</section>
+
+<!-- THE LIST -->
+<section id="liste">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Die Liste</div>
+      <h2>Von oben nach unten: nach Belastung sortiert.</h2>
+      <p>Rechts steht jeweils die Empfehlung. Wenn dein Budget begrenzt ist, arbeite die Liste einfach von oben nach unten ab.</p>
+    </div>
+    <div class="legend reveal">
+      <span class="grade"><span class="dot r"></span>Bio kaufen</span>
+      <span class="grade"><span class="dot g"></span>Kann konventionell</span>
+      <span class="grade"><span class="dot m"></span>Spar dir's</span>
+    </div>
+
+    <h3 class="tier-title buy reveal">Hier zahlt sich Bio aus</h3>
+
+    <div class="item buy reveal">
+      <div class="num">01</div>
+      <div class="body"><h3>Beeren &amp; Trauben</h3><p>Dünne Schale, roh gegessen. Erdbeeren, Blaubeeren, Brombeeren und Trauben gehören zu den am stärksten belasteten Sorten.</p></div>
+      <div class="rec"><div class="big">Bio kaufen</div><div class="small">hohe Rückstände</div></div>
+    </div>
+
+    <div class="item buy reveal">
+      <div class="num">02</div>
+      <div class="body"><h3>Blattgemüse &amp; Salate</h3><p>Große Oberfläche, wird roh gegessen. Spinat, Grünkohl, Mangold und Blattsalate.</p></div>
+      <div class="rec"><div class="big">Bio kaufen</div><div class="small">hohe Rückstände</div></div>
+    </div>
+
+    <div class="item buy reveal">
+      <div class="num">03</div>
+      <div class="body"><h3>Stein- &amp; Kernobst</h3><p>Wird oft mit Schale gegessen. Pfirsiche, Nektarinen, Kirschen, Äpfel und Birnen.</p></div>
+      <div class="rec"><div class="big">Bio kaufen</div><div class="small">hohe Rückstände</div></div>
+    </div>
+
+    <div class="item buy reveal">
+      <div class="num">04</div>
+      <div class="body"><h3>Kartoffeln</h3><p>Werden mit Schale gegessen und häufig mit Keimhemmern behandelt.</p></div>
+      <div class="rec"><div class="big">Bio kaufen</div><div class="small">hohe Rückstände</div></div>
+    </div>
+
+    <div class="item buy reveal">
+      <div class="num">05</div>
+      <div class="body"><h3>Frische Kräuter</h3><p>Roh, ungeschält und direkt aufs Essen. Waschen holt hier nicht alles heraus.</p></div>
+      <div class="rec"><div class="big">Bio kaufen</div><div class="small">roh &amp; ungeschält</div></div>
+    </div>
+
+    <div class="item buy reveal">
+      <div class="num">06</div>
+      <div class="body"><h3>Fleisch, Milch &amp; Eier</h3><p>In der Bio-Tierhaltung sind Antibiotika als Routine verboten. Für mich das stärkste Argument von allen.</p></div>
+      <div class="rec"><div class="big">Bio kaufen</div><div class="small">Tierwohl &amp; Resistenzen</div></div>
+    </div>
+
+    <h3 class="tier-title ok reveal">Hier kannst du entspannt sparen</h3>
+
+    <div class="item ok reveal">
+      <div class="num">07</div>
+      <div class="body"><h3>Dickschaliges Obst</h3><p>Schale kommt weg, Rückstände größtenteils mit. Ananas, Banane, Mango, Papaya, Wassermelone, Avocado, Kiwi.</p></div>
+      <div class="rec"><div class="big">Kann konventionell</div><div class="small">kaum Rückstände</div></div>
+    </div>
+
+    <div class="item ok reveal">
+      <div class="num">08</div>
+      <div class="body"><h3>Lager- &amp; Kochgemüse</h3><p>Gering belastet oder geschält. Zwiebeln, Karotten, Spargel, Mais, Kraut, Blumenkohl, Champignons, Erbsen.</p></div>
+      <div class="rec"><div class="big">Kann konventionell</div><div class="small">kaum Rückstände</div></div>
+    </div>
+
+    <h3 class="tier-title skip reveal">Hier bringt das Siegel nichts</h3>
+
+    <div class="item skip reveal">
+      <div class="num">09</div>
+      <div class="body"><h3>Verarbeitete Bio-Produkte</h3><p>Bio-Zucker, Bio-Limo und Bio-Kekse bleiben trotzdem Zucker. Das Siegel macht kein schlechtes Lebensmittel gut.</p></div>
+      <div class="rec"><div class="big">Spar dir's</div><div class="small">reines Marketing</div></div>
+    </div>
+
+    <div class="callout reveal" style="margin-top:24px">
+      <div class="l">Warum diese Reihenfolge</div>
+      <p>Die Logik ist immer dieselbe: <b>Kontaktfläche und Verzehrform</b> entscheiden. Eine Erdbeere isst du ganz und ungeschält, eine Banane schälst du. Blattsalat hat pro Gramm ein Vielfaches der Oberfläche einer Zwiebel.</p>
+      <p>Bei Punkt 06 zählt ein anderes Argument als Rückstände: der <b>Umgang mit Antibiotika</b>. Der Verzicht auf Routinegaben in der Bio-Tierhaltung wirkt dem Problem resistenter Keime entgegen, und das betrifft uns alle.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRACTICE -->
+<section id="praxis">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Beim Einkauf</div>
+      <h2>So setzt du die Liste praktisch um.</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="n"></div><div><h4>Budget nach oben verteilen</h4><p>Wenn du nur einen Teil bio kaufen kannst, nimm die Punkte 01 bis 06. Dort holst du den größten Effekt pro Euro.</p></div></div>
+      <div class="step reveal"><div class="n"></div><div><h4>Bei 07 und 08 konventionell greifen</h4><p>Das gesparte Geld steckst du besser in mehr Obst und Gemüse insgesamt als in Bio-Bananen.</p></div></div>
+      <div class="step reveal"><div class="n"></div><div><h4>Alles gründlich waschen</h4><p>Auch Bio. Waschen entfernt Rückstände, Keime und Erde, holt aber nicht alles heraus, besonders nicht bei Kräutern.</p></div></div>
+      <div class="step reveal"><div class="n"></div><div><h4>Siegel nicht mit gesund verwechseln</h4><p>Bio sagt etwas über die Produktion, nicht über den Nährwert. Ein Bio-Keks bleibt ein Keks.</p></div></div>
+    </div>
+    <div class="principle reveal" style="margin-top:26px">
+      <span class="l">Die ehrliche Zusammenfassung</span>
+      Setz Bio dort ein, wo du dünne Schalen roh isst, und bei Tierprodukten. Bei dickschaligem Obst und Kochgemüse spar dir das Geld. Und lass dich von Bio-Siegeln auf Süßem und Limo nicht täuschen. Wichtiger als jede Bio-Entscheidung bleibt, überhaupt viel frisches Obst und Gemüse zu essen.
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="start">
+  <div class="container">
+    <div class="cta reveal">
+      <img class="cta-photo" src="lara-portrait.jpg" alt="Dr. Lara Vadlau" loading="lazy">
+      <h2>Wissen, das dich entscheiden lässt,<br>nicht zweifeln.</h2>
+      <p>Ich baue jede Woche Reels und Vertiefungen wie diese: praktisch, priorisiert und ehrlich eingeordnet. Kein Hype, keine Panikmache, nur das, was im Alltag wirklich einen Unterschied macht.</p>
+      <a class="btn" href="https://www.instagram.com/laravadlau/" target="_blank" rel="noopener">Folge für mehr auf Instagram →</a>
+      <div class="socials">
+        <a href="https://www.instagram.com/laravadlau/" target="_blank" rel="noopener">Instagram</a>
+        <a href="#" data-nl-open>Newsletter</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<section style="padding-top:20px">
+  <div class="container">
+    <div class="disclaimer reveal">
+      <b>Wichtiger Hinweis.</b> Dieser Guide dient der Information und ersetzt keine individuelle Beratung. Bei Fragen zu deiner Ernährung wende dich an eine Fachperson. Die Einordnung beruht auf typischen Rückstandsmustern und kann je nach Herkunft, Saison und Anbieter abweichen.
+    </div>
+  </div>
+</section>
+
+<!-- CHALLENGE CTA -->
+<section style="padding:0 0 26px">
+  <div class="container">
+    <div class="reveal" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;background:linear-gradient(135deg,rgba(212,175,55,.14),rgba(212,175,55,.03));border:1px solid var(--line);border-radius:18px;padding:26px 30px">
+      <div style="min-width:240px;flex:1">
+        <div style="font-family:'Fraunces',serif;font-size:22px;color:#fff;font-weight:500">Du willst mehr?</div>
+        <div style="color:var(--muted);font-size:15px;margin-top:5px">Die <b style="color:var(--gold-soft)">30-Tage-Longevity-Challenge</b> gibt es jetzt im Angebot.</div>
+      </div>
+      <a href="https://hi.switchy.io/zFRA" target="_blank" rel="noopener" style="flex:none;background:linear-gradient(135deg,var(--gold),var(--gold-soft));color:#1a1206;font-weight:600;font-size:15px;padding:14px 28px;border-radius:999px;white-space:nowrap;text-decoration:none;box-shadow:0 10px 26px rgba(212,175,55,.22)">Zur 30-Tage-Challenge &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>© 2026 Dr. Lara Vadlau · Longevity Medicine</div>
+    <div>Wissens-Vertiefung zum Reel · Keyword: <b style="color:var(--gold)">BIO</b></div>
+  </div>
+</footer>
+
+<!-- NEWSLETTER MODAL -->
+<div class="nl-overlay" id="nlOverlay" role="dialog" aria-modal="true" aria-label="Newsletter-Anmeldung">
+  <div class="nl-modal">
+    <button class="nl-close" id="nlClose" aria-label="Schliessen">&times;</button>
+    <div id="nlForming">
+      <h3>Newsletter</h3>
+      <p class="intro">Longevity-Wissen, ehrlich eingeordnet. Kein Spam, jederzeit abbestellbar.</p>
+      <form id="nlForm" novalidate>
+        <div class="nl-field"><label for="nlName">Name</label><input id="nlName" name="name" type="text" required autocomplete="name"></div>
+        <div class="nl-field"><label for="nlEmail">E-Mail-Adresse</label><input id="nlEmail" name="email" type="email" required autocomplete="email"></div>
+        <div class="nl-field"><label for="nlPhone">Handynummer <span class="opt">(optional)</span></label><input id="nlPhone" name="phone" type="tel" autocomplete="tel"></div>
+        <button class="nl-submit" type="submit">Anmelden</button>
+        <p class="nl-note">Mit der Anmeldung stimmst du zu, dass deine Angaben zum Versand des Newsletters gespeichert werden.</p>
+      </form>
+    </div>
+    <div id="nlDone" class="nl-success" style="display:none">
+      <div class="ok">&#10003;</div>
+      <h3>Danke, du bist dabei!</h3>
+      <p class="intro">Wir haben deine Anmeldung erhalten.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+const prog=document.getElementById('progress');
+addEventListener('scroll',()=>{const h=document.documentElement;prog.style.width=(h.scrollTop)/(h.scrollHeight-h.clientHeight)*100+'%';});
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+(function(){
+  var ENDPOINT="https://script.google.com/macros/s/AKfycbxr7dsmt1WNeWHnz8ORkzMpfqTb0o7GfyZQCNAbmtPFQ9CBpt3sR93Pl4tDfr-BupeviA/exec";
+  var SOURCE="BIO";
+  var ov=document.getElementById('nlOverlay');
+  if(!ov)return;
+  function open(e){if(e)e.preventDefault();ov.classList.add('open');setTimeout(function(){var n=document.getElementById('nlName');if(n)n.focus();},60);}
+  function close(){ov.classList.remove('open');}
+  document.querySelectorAll('[data-nl-open]').forEach(function(a){a.addEventListener('click',open);});
+  document.getElementById('nlClose').addEventListener('click',close);
+  ov.addEventListener('click',function(e){if(e.target===ov)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  document.getElementById('nlForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=document.getElementById('nlName').value.trim();
+    var email=document.getElementById('nlEmail').value.trim();
+    var phone=document.getElementById('nlPhone').value.trim();
+    if(!name||!email){return;}
+    var btn=this.querySelector('.nl-submit');btn.disabled=true;btn.textContent='Wird gesendet...';
+    var body=new URLSearchParams({name:name,email:email,phone:phone,source:SOURCE}).toString();
+    var done=function(){document.getElementById('nlForming').style.display='none';document.getElementById('nlDone').style.display='block';};
+    fetch(ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},body:body}).then(done).catch(done);
+  });
+})();
+</script>
+</body>
+</html>
